@@ -1,0 +1,87 @@
+.line {
+    background-color: #DCD293;
+    padding: 50px, 0px, 25px, 0px;
+    width: 100%;
+    border-top: 20px dotted #A48E4E;
+}
+
+.machine-container {
+    background-color: #000000;
+    padding: 1px;
+    overflow: hidden;
+    height: 400px;
+    width: 100px;
+}
+
+.slot-machine {
+    width: 32.999%;
+    border: 3px solid #000;
+    height: 397px;
+    padding-top: 65px;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+    background-color: #BBA456;
+}
+
+.slot-machine .slot {
+    border: none !important;
+    background: transparent !important;
+}
+
+.slot-machine .slot {
+    height: 350px;
+    background-position-x: 50%;
+    background-position: 100%;
+    background-repeat: no-repeat;
+}
+
+.slot-real img {
+    max-width: 150px;
+}
+
+.slot-machine-button {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+}
+
+.slot-machine-button {
+    -moz-box-shadow: inset 0px 1px 0px 0px #fce2c1;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #fce2c1;
+    box-shadow: inset 0px 1px 0px 0px #fce2c1;
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffc477), color-stop(1, #fb9e25));
+    background: -moz-linear-gradient( center top, #ffc477 5%, #fb9e25 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffc477', endColorstr='#fb9e25');
+    background-color: #ffc477;
+    border-radius: 75px;
+    text-indent: 0px;
+    border: 6px solid #eeb44f;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    font-style: normal;
+    height: 100px;
+    line-height: 90px;
+    margin-top: 10px;
+    width: 100px;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 1px 1px 0px #cc9f52;
+    cursor: pointer;
+}
+
+.slot-machine-button:hover {
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477));
+    background: -moz-linear-gradient( center top, #fb9e25 5%, #ffc477 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#fb9e25', endColorstr='#ffc477');
+    background-color: #fb9e25;
+}
+
+.slot-machine-button:active {
+    position: relative;
+    top: 1px;
+}
