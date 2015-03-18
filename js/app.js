@@ -59,6 +59,14 @@ myApp.controller('TipsController', function ($http, $window) {
         }
     };
 
+    vm.getMovieInfo = function () {
+        $http.get("http://localhost:8080/pag.com/api/movies/" + vm.movie.id + "/actors").success(function (data) {
+            vm.actors = data;
+        }).error(function (data) {
+            alert("ERROR");
+        });
+    };
+
     vm.chooseURL = function () {
         if ((vm.isMovieLocked) && (vm.isSnackLocked) && (vm.isDrinkLocked))
             alert(vm.getGenre());

@@ -1,169 +1,3 @@
-@charset "utf-8";
-/* CSS Document */
-
-@import url(http://fonts.googleapis.com/css?family=Pathway+Gothic+One);
-a {
-    color: #ccd500;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #a9b119;
-}
-
-.clear {
-    clear: both;
-}
-
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-body {}
-
-footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 80px;
-    width: 100%;
-    background: black;
-}
-
-b {
-    font-weight: 600;
-}
-/* Titulos
--------------------------------------------------------------------------*/
-
-h1 {
-    width: 100%;
-    color: #000000;
-    font-size: 40px;
-    margin-bottom: 25px;
-}
-
-h2 {
-    color: #000000;
-    display: table-cell;
-    float: left;
-    font-size: 45px;
-    line-height: 40px;
-    margin: 0 0 50px;
-    text-align: center;
-    width: 100%;
-    font-weight: 300;
-}
-
-h2 span {
-    font-weight: 400;
-}
-
-h3 {
-    float: left;
-    width: 100%;
-    margin: 0 0 20px 0;
-    color: black;
-    font-size: 40px;
-    font-family: 'Lato', 'sans-serif';
-    font-weight: 300;
-}
-
-h4 {
-    color: black;
-    display: table-cell;
-    float: left;
-    font-size: 20px;
-    line-height: 31px;
-    margin: 0 0 0;
-    text-align: center;
-    width: 100%;
-    font-weight: 400;
-}
-
-p.title {
-    color: #000000;
-    display: table-cell;
-    float: left;
-    font-size: 45px;
-    line-height: 40px;
-    margin: 0 0 50px;
-    text-align: center;
-    width: 100%;
-    font-weight: 300;
-}
-
-.grey {
-    color: #444;
-}
-/* INICIO
--------------------------------------------------------------------------*/
-
-#header {
-    margin: 0 auto 0;
-    width: 100%;
-    position: absolute;
-    text-align: center;
-    top: 0px;
-    background-color: #6C5726;
-    overflow: hidden;
-    position: relative;
-    padding: 50px 0px;
-    border-top: 10px solid #A48E4E;
-    border-bottom: 10px solid #A48E4E;
-}
-
-#header table,
-#footer table {
-    height: 100%;
-    width: 100%;
-}
-
-#header table td,
-#footer table td {
-    vertical-align: middle;
-}
-
-#header .content {
-    color: #FFFFFF;
-    float: left;
-    font-size: 50px;
-    font-weight: 300;
-    line-height: 42px;
-    margin-top: 30px;
-    text-align: center;
-    width: 100%;
-}
-
-#header .content,
-#footer .content {
-    font-family: 'Pathway Gothic One';
-    color: #ffffff;
-    float: left;
-    font-size: 70px;
-    font-weight: 300;
-    line-height: 80px;
-    margin-top: 2px;
-    margin-bottom: 20px;
-    text-align: center;
-    width: 100%;
-    padding: 30px 0px;
-}
-
-#header .content > div,
-#footer .content > div {
-    display: inline-block;
-}
-
-#footer {
-    width: 100%;
-    background-color: #6C5726;
-    border-top: 20px dotted #A48E4E;
-    height: 200px;
-}
-
 .line {
     padding: 50px 0px 25px 0px;
     width: 100%;
@@ -173,52 +7,52 @@ p.title {
 
 .machineContainer {
     /*background-color: #000;*/
-	background-color: ;
+    background-color: ;
     padding: 1px 1px 1px 1px;
     overflow: hidden;
     /*height: 360px;*/
-	height: 410px;
+    height: 410px;
     width: 1000px;
     margin-left: 150px;
 }
 
 .frame {
-	float: left;
-	width: 290px;
-	height: 400px;
-	margin-top: ;
-	margin-right: 20px;
-	background-image: url("../img/steel.png");
-	background-color: ;
-	border-radius: 10px;
-	z-index: -10;
+    float: left;
+    width: 290px;
+    height: 400px;
+    margin-top: ;
+    margin-right: 20px;
+    background-image: url("../img/steel.png");
+    background-color: ;
+    border-radius: 10px;
+    z-index: -10;
 }
 .frame:last-child {
-	margin-right: 0px;
+    margin-right: 0px;
 }
 /*.slotMachine:first-child {
-	margin-left: 20px;
+    margin-left: 20px;
 }*/
 .slotMachine {
     /*width: 24.666%;*/
-	width: 245px;
+    width: 245px;
     border: 3px solid #000;
     /*height: 357px;*/
-	height: 270px;
+    height: 270px;
     overflow: hidden;
     display: inline-block;
     text-align: center;
-	margin-right: 70px;
-	margin-top: 20px;
-	margin-left: 22px;
-	
+    margin-right: 70px;
+    margin-top: 20px;
+    margin-left: 22px;
+
     /*margin: 0px 5px;*/
     /*border: 5px solid #000;*/
-    
+
     /*background-color: #FFFFFF;*/
 }
 .slotMachine:last-child {
-	margin-right: 0px;
+    margin-right: 0px;
 }
 
 .machineResult {
@@ -229,8 +63,8 @@ p.title {
 
 .slotMachine .slot {
     /*height: 350px;*/
-	height: 270px;
-	/*width: 245px;*/
+    height: 270px;
+    /*width: 245px;*/
 
     background-position-x: 50%;
     background-position-y: 60%;
@@ -239,41 +73,45 @@ p.title {
 }
 
 /*.lockInfoContainer {
-	width: 1000px;
-	height: 100px;
-	display: inline-block;
-	margin-left: ;
-	z-index: ;
-	background-color: ;
+    width: 1000px;
+    height: 100px;
+    display: inline-block;
+    margin-left: ;
+    z-index: ;
+    background-color: ;
 }*/
 .lockinfo {
-	width: 250px;
-	float: left;
-	margin-right: ;
-	margin-left: 20px;
-	margin-top: ;
-	z-index: ;
-	/*border: 2px solid #000;*/
-	background-color: ;
+    width: 250px;
+    float: left;
+    margin-right: ;
+    margin-left: 20px;
+    margin-top: ;
+    z-index: ;
+    /*border: 2px solid #000;*/
+    background-color: ;
 }
 .lockinfo:last-child {
-	margin-right: 0px;	
+    margin-right: 0px;
 }
 
 .lock {
-	float: left;
-	margin-left: 10px;
-	margin-top: ;	
+    float: left;
+    margin-left: 10px;
+    margin-top: ;
 }
 
 .info {
-	float: right;
-	margin-right: 10px;
-	margin-top: ;	
+    float: right;
+    margin-right: 10px;
+    margin-top: ;
+}
+
+.small-image {
+    max-width: 100px;
 }
 
 .clearfix {
-	clear: both;	
+    clear: both;
 }
 
 .mslot1 {
@@ -327,9 +165,9 @@ p.title {
 .slot7 img {
     /*margin-top: 30px;
     /*max-width: 150px;*/
-	/*width: 100%;*/
-	height: 100%;
-	display: block;
+    /*width: 100%;*/
+    height: 100%;
+    display: block;
 }
 
 #textMachine,
