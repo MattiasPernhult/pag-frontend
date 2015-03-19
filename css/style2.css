@@ -65,7 +65,7 @@
     /*height: 350px;*/
     height: 270px;
     width: 245px;
-
+    text-overflow: ellipsis;
     background-position-x: 50%;
     background-position-y: 60%;
     background-repeat: no-repeat;
@@ -172,6 +172,10 @@
   height : auto;
   max-height: 100%;
   max-width: 100%;
+}
+
+.ng-binding h3 {
+    text-overflow: ellipsis;
 }
 
 #textMachine,
