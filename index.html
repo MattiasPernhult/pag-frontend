@@ -29,15 +29,12 @@
                             <div class="slot mslot6"></div>
                             <div class="slot slot7">
                                 <img ng-src="{{ctrl.movie.posterURL}}">
-                                <h4>{{ctrl.movie.title}}</h4>
-                                <input type="image" ng-src="{{ctrl.movieLockImage}}" ng-click="ctrl.changeMovieLock()">
                             </div>
                             <!-- slot 7 -->
 
                         </div>
                         <!-- machine 1 -->
-                        <h3>Title</h3>
-                        <!--<div class="lockInfoContainer">-->
+                        <h3>{{ctrl.movie.title}}</h3>
                         <div class="lockinfo">
                             <div class="lock">
                                 <input type="image" ng-src="{{ctrl.movieLockImage}}" ng-click="ctrl.changeMovieLock()">
@@ -66,13 +63,11 @@
                             <div class="slot sslot6"></div>
                             <div class="slot slot7">
                                 <img ng-src="{{ctrl.snack.posterURL}}">
-                                <h4>{{ctrl.snack.name}}</h4>
-                                <input type="image" ng-src="{{ctrl.snackLockImage}}" ng-click="ctrl.changeSnackLock()">
                             </div>
                             <!-- slot7 -->
                         </div>
                         <!-- Machine 2 -->
-                        <h3>Title</h3>
+                        <h3>{{ctrl.snack.name}}</h3>
                         <div class="lockinfo">
                             <div class="lock">
                                 <input type="image" ng-src="{{ctrl.snackLockImage}}" ng-click="ctrl.changeSnackLock()">
@@ -102,13 +97,11 @@
                             <div class="slot sslot6"></div>
                             <div class="slot slot7">
                                 <img ng-src="{{ctrl.drink.posterURL}}">
-                                <h4>{{ctrl.drink.name}}</h4>
-                                <input type="image" ng-src="{{ctrl.drinkLockImage}}" ng-click="ctrl.changeDrinkLock()">
                             </div>
                             <!-- slot 7 -->
                         </div>
                         <!-- Machine 3 -->
-                        <h3>Title</h3>
+                        <h3>{{ctrl.drink.name}}</h3>
                         <div class="lockinfo">
                             <div class="lock">
                                 <input type="image" ng-src="{{ctrl.drinkLockImage}}" ng-click="ctrl.changeDrinkLock()">

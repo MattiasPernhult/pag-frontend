@@ -17,7 +17,7 @@ myApp.controller('TipsController', function ($http, $window) {
     vm.isSnackLocked = false;
     vm.isDrinkLocked = false;
 
-    vm.domain = "http://localhost:8080/pag.com/api/tips/";
+    vm.domain = "http://10.1.3.121:8080/pag.com/api/tips/";
 
     $window.movie = vm.isMovieLocked;
     $window.snack = vm.isSnackLocked;
@@ -60,7 +60,7 @@ myApp.controller('TipsController', function ($http, $window) {
     };
 
     vm.getMovieInfo = function () {
-        $http.get("http://localhost:8080/pag.com/api/movies/" + vm.movie.id + "/actors").success(function (data) {
+        $http.get("http://10.1.3.121:8080/pag.com/api/movies/" + vm.movie.id + "/actors").success(function (data) {
             vm.actors = data;
         }).error(function (data) {
             alert("ERROR");
@@ -69,7 +69,7 @@ myApp.controller('TipsController', function ($http, $window) {
 
     vm.getSnackInfo = function () {
         alert("hej");
-        $http.get("http://localhost:8080/snacks.com/api/snacks/combine?id=" + vm.snack.id).success(function(data) {
+        $http.get("http://10.1.3.121:8080/snacks.com/api/snacks/combine?id=" + vm.snack.id).success(function(data) {
             vm.combineSnack = data;
         });
     };
