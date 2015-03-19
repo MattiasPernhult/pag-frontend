@@ -115,7 +115,9 @@
                             <!-- end .lock -->
 
                             <div class="info">
-                                <input type="submit" value="Info" />
+                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#drinkModal">
+                                    More..
+                                </button>
                             </div>
                             <!-- end .info -->
 
@@ -199,6 +201,34 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="ctrl.stopPlay()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="drinkModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="ctrl.stopPlay()"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">{{ctrl.drink.name}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <img class="small-image" ng-src="{{ctrl.drink.posterURL}}">
+                        <p>{{ctrl.drink.description}}</p>
+                        <h3>{{ctrl.drink.brand}}</h3>
+                        <h4>{{ctrl.drink.kind}}</h4>
+
+                        <h3>{{ctrl.drink.rating}}/5</h3>
+                        <h4>{{ctrl.drink.region}}</h4>
+                        <h4>{{ctrl.drink.grape}}</h4>
+                        <h4>{{ctrl.drink.winery}}</h4>
                     </div>
                 </div>
                 <div class="modal-footer">
