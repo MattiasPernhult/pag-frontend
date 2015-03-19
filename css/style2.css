@@ -6,11 +6,9 @@
 }
 
 .machineContainer {
-    /*background-color: #000;*/
     background-color: ;
     padding: 1px 1px 1px 1px;
     overflow: hidden;
-    /*height: 360px;*/
     height: 410px;
     width: 1000px;
     margin-left: 150px;
@@ -30,14 +28,9 @@
 .frame:last-child {
     margin-right: 0px;
 }
-/*.slotMachine:first-child {
-    margin-left: 20px;
-}*/
+
 .slotMachine {
-    /*width: 24.666%;*/
     width: 245px;
-    /*border: 3px solid #000;*/
-    /*height: 357px;*/
     height: 270px;
     overflow: hidden;
     display: inline-block;
@@ -45,12 +38,8 @@
     margin-right: 70px;
     margin-top: 20px;
     margin-left: 22px;
-
-    /*margin: 0px 5px;*/
-    /*border: 5px solid #000;*/
-
-    /*background-color: #FFFFFF;*/
 }
+
 .slotMachine:last-child {
     margin-right: 0px;
 }
@@ -62,7 +51,6 @@
 }
 
 .slotMachine .slot {
-    /*height: 350px;*/
     height: 270px;
     width: 245px;
     text-overflow: ellipsis;
@@ -154,15 +142,10 @@
 }
 
 .slot7 img {
-    /*margin-top: 30px;
-    /*max-width: 150px;*/
-    /*width: 245px;
-    height: 275px;*/
-    /*display: block;*/
     width: auto;
-  height : auto;
-  max-height: 100%;
-  max-width: 100%;
+    height : auto;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .ng-binding h3 {
@@ -180,6 +163,12 @@
     font-weight:  bold;
     background-color: ;
     margin-left: 20px;
+}
+
+.description {
+    float: left;
+    width: ;
+    background-color: ;
 }
 
 #textMachine,

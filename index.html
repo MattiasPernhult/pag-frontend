@@ -155,17 +155,23 @@
 
     <div class="modal fade" id="movieModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content" style="width:100%">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="ctrl.stopPlay()"><span aria-hidden="true">&times;</span>
                     </button>
                     <h4 class="modal-title" id="myModalLabel">{{ctrl.movie.title}}</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="container" style="width:500px; display:block">
+                    <div class="container" style="width:100%">
                         <img class="small-image" ng-src="{{ctrl.movie.posterURL}}">
                         <h3>{{ctrl.movie.rating}}/10</h3>
-                        <p>{{ctrl.movie.plot}}</p>
+
+                        <div class="description">
+                            <p>
+                            {{ctrl.movie.plot}}
+                            </p>
+                        </div>
+
                         <h3>Genre</h3>
                         <p>{{ctrl.movie.genres.toString()}}</p>
                         <h2>Actors</h2>
@@ -198,7 +204,11 @@
                 <div class="modal-body">
                     <div class="container">
                         <img class="small-image" ng-src="{{ctrl.snack.posterURL}}">
+
+                        <div class="description">
                         <p>{{ctrl.snack.description}}</p>
+                        </div>
+
                         <h3>{{ctrl.snack.brand}}</h3>
                         <h4>{{ctrl.snack.kind}}</h4>
                         <h2>Combine with</h2>
