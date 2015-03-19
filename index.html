@@ -79,7 +79,7 @@
                             <!-- end .lock -->
 
                             <div class="info">
-                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#snackModal" ng-click="ctrl.getMovieInfo()">
+                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#snackModal" ng-click="ctrl.getSnackInfo()">
                                     More..
                                 </button>
                             </div>
@@ -191,17 +191,14 @@
                         <h3>{{ctrl.snack.brand}}</h3>
                         <h4>{{ctrl.snack.kind}}</h4>
                         <h2>Combine with</h2>
-                        <!--
-                        <div ng-repeat="item in ctrl.actors.actors">
+                        <div ng-repeat="item in ctrl.snack.combineSnack">
                             <div class="row|($index % 4 == 0)">
                                 <div class="col-md-1">
                                     <img class="small-image" ng-src="{{item.posterURL}}">
-                                    <h4>{{item.character}}</h4>
-                                    <h5>{{item.actorName}}</h5>
+                                    <h4>{{item.name}}</h4>
                                 </div>
                             </div>
                         </div>
-                        -->
                     </div>
                 </div>
                 <div class="modal-footer">
