@@ -34,7 +34,12 @@
 
                         </div>
                         <!-- machine 1 -->
-                        <h3>{{ctrl.movie.title}}</h3>
+                        <div class="title">
+
+                        {{ctrl.movie.title}}
+
+                        </div>
+                        <!-- .title -->
                         <div class="lockinfo">
                             <div class="lock">
                                 <input type="image" ng-src="{{ctrl.movieLockImage}}" ng-click="ctrl.changeMovieLock()">
@@ -67,7 +72,12 @@
                             <!-- slot7 -->
                         </div>
                         <!-- Machine 2 -->
-                        <h3>{{ctrl.snack.name}}</h3>
+                        <div class="title">
+
+                                {{ctrl.snack.name}}
+
+                        </div>
+                        <!-- .title -->
                         <div class="lockinfo">
                             <div class="lock">
                                 <input type="image" ng-src="{{ctrl.snackLockImage}}" ng-click="ctrl.changeSnackLock()">
@@ -101,7 +111,12 @@
                             <!-- slot 7 -->
                         </div>
                         <!-- Machine 3 -->
-                        <h3>{{ctrl.drink.name}}</h3>
+                        <div class="title">
+
+                                {{ctrl.drink.name}}
+
+                        </div>
+                        <!-- .title -->
                         <div class="lockinfo">
                             <div class="lock">
                                 <input type="image" ng-src="{{ctrl.drinkLockImage}}" ng-click="ctrl.changeDrinkLock()">
@@ -147,7 +162,7 @@
                     <h4 class="modal-title" id="myModalLabel">{{ctrl.movie.title}}</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="container">
+                    <div class="container" style="width:500px; display:block">
                         <img class="small-image" ng-src="{{ctrl.movie.posterURL}}">
                         <h3>{{ctrl.movie.rating}}/10</h3>
                         <p>{{ctrl.movie.plot}}</p>
@@ -156,8 +171,8 @@
                         <h2>Actors</h2>
                         <div ng-repeat="item in ctrl.actors.actors">
                             <div class="row|($index % 4 == 0)">
-                                <div class="col-md-1">
-                                    <img class="small-image" ng-src="{{item.posterURL}}">
+                                <div class="col-md-1" style="margin-right:75px">
+                                    <img class="small-image" ng-src="{{item.posterURL}}" style="border-radius:5px; box-shadow: 3px 3px #CCC;">
                                     <h4>{{item.character}}</h4>
                                     <h5>{{item.actorName}}</h5>
                                 </div>

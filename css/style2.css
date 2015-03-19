@@ -72,14 +72,6 @@
     background-size: contain;
 }
 
-/*.lockInfoContainer {
-    width: 1000px;
-    height: 100px;
-    display: inline-block;
-    margin-left: ;
-    z-index: ;
-    background-color: ;
-}*/
 .lockinfo {
     width: 250px;
     float: left;
@@ -87,7 +79,6 @@
     margin-left: 20px;
     margin-top: ;
     z-index: ;
-    /*border: 2px solid #000;*/
     background-color: ;
 }
 .lockinfo:last-child {
@@ -176,6 +167,19 @@
 
 .ng-binding h3 {
     text-overflow: ellipsis;
+}
+
+.title {
+    display: block;
+    width: 250px;
+    height: 50px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 20px;
+    font-weight:  bold;
+    background-color: ;
+    margin-left: 20px;
 }
 
 #textMachine,
