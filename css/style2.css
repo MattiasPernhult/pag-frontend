@@ -171,6 +171,10 @@
     background-color: ;
 }
 
+.clearfix {
+    clear: both;
+}
+
 #textMachine,
 #textMachine2 {
     width: 520px;

@@ -204,13 +204,13 @@
                 <div class="modal-body">
                     <div class="container" style="width:100%">
                         <img class="small-image" ng-src="{{ctrl.snack.posterURL}}">
+                        <h3>{{ctrl.snack.brand}}</h3>
+                        <h4>{{ctrl.snack.kind}}</h4>
 
                         <div class="description">
                             <p>{{ctrl.snack.description}}</p>
                         </div>
-
-                        <h3>{{ctrl.snack.brand}}</h3>
-                        <h4>{{ctrl.snack.kind}}</h4>
+                        <div class="clearfix"></div>
                         <h2>Combine with</h2>
                         <div ng-repeat="item in ctrl.combineSnack.snacks">
                             <div class="row|($index % 4 == 0)">
