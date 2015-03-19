@@ -195,18 +195,18 @@
 
     <div class="modal fade" id="snackModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content" style="width:100%">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="ctrl.stopPlay()"><span aria-hidden="true">&times;</span>
                     </button>
                     <h4 class="modal-title" id="myModalLabel">{{ctrl.snack.name}}</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="container">
+                    <div class="container" style="width:100%">
                         <img class="small-image" ng-src="{{ctrl.snack.posterURL}}">
 
                         <div class="description">
-                        <p>{{ctrl.snack.description}}</p>
+                            <p>{{ctrl.snack.description}}</p>
                         </div>
 
                         <h3>{{ctrl.snack.brand}}</h3>
@@ -214,7 +214,7 @@
                         <h2>Combine with</h2>
                         <div ng-repeat="item in ctrl.combineSnack.snacks">
                             <div class="row|($index % 4 == 0)">
-                                <div class="col-md-1">
+                                <div class="col-md-1" style="margin-right:75px">
                                     <img class="small-image" ng-src="{{item.posterURL}}">
                                     <h4>{{item.name}}</h4>
                                 </div>
@@ -231,14 +231,14 @@
 
     <div class="modal fade" id="drinkModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content" style="width:100%">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="ctrl.stopPlay()"><span aria-hidden="true">&times;</span>
                     </button>
                     <h4 class="modal-title" id="myModalLabel">{{ctrl.drink.name}}</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="container">
+                    <div class="container" style="width:100%">
                         <img class="small-image" ng-src="{{ctrl.drink.posterURL}}">
                         <p>{{ctrl.drink.description}}</p>
                         <h3>{{ctrl.drink.brand}}</h3>
