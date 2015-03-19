@@ -187,7 +187,7 @@
                         <h3>{{ctrl.snack.brand}}</h3>
                         <h4>{{ctrl.snack.kind}}</h4>
                         <h2>Combine with</h2>
-                        <div ng-repeat="item in ctrl.snack.combineSnack">
+                        <div ng-repeat="item in ctrl.snack.combineSnack.snacks">
                             <div class="row|($index % 4 == 0)">
                                 <div class="col-md-1">
                                     <img class="small-image" ng-src="{{item.posterURL}}">
