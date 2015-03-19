@@ -67,6 +67,13 @@ myApp.controller('TipsController', function ($http, $window) {
         });
     };
 
+    vm.getSnackInfo = function () {
+        alert("hej");
+        $http.get("http://localhost:8080/snacks.com/api/snacks/combine?id=" + vm.snack.id).success(function(data) {
+            vm.combineSnack = data;
+        });
+    };
+
     vm.chooseURL = function () {
         if ((vm.isMovieLocked) && (vm.isSnackLocked) && (vm.isDrinkLocked))
             alert(vm.getGenre());
