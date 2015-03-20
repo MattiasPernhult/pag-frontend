@@ -40,7 +40,7 @@
 
                         </div>
                         <!-- .title -->
-                        <div class="lockinfo">
+                        <div class="lockinfo" ng-show="ctrl.start" id="movieLockInfo">
                             <div class="lock">
                                 <input type="image" ng-src="{{ctrl.movieLockImage}}" ng-click="ctrl.changeMovieLock()">
                             </div>
@@ -78,7 +78,7 @@
 
                         </div>
                         <!-- .title -->
-                        <div class="lockinfo">
+                        <div class="lockinfo" ng-show="ctrl.start">
                             <div class="lock">
                                 <input type="image" ng-src="{{ctrl.snackLockImage}}" ng-click="ctrl.changeSnackLock()">
                             </div>
@@ -117,7 +117,7 @@
 
                         </div>
                         <!-- .title -->
-                        <div class="lockinfo">
+                        <div class="lockinfo" ng-show="ctrl.start">
                             <div class="lock">
                                 <input type="image" ng-src="{{ctrl.drinkLockImage}}" ng-click="ctrl.changeDrinkLock()">
                             </div>

@@ -1,13 +1,17 @@
 var myApp = angular.module('myApp', []);
 
-var finished = true;
+var finished = false;
 
 myApp.factory('DataBasket', function () {
     return {};
 });
 
-myApp.controller('TipsController', function ($http, $window) {
+var app = this;
+
+myApp.controller('TipsController', function ($scope, $http, $window) {
     var vm = this;
+
+    vm.start = false;
 
     vm.movieLockImage = "img/glyphicons-205-unlock.png";
     vm.snackLockImage = "img/glyphicons-205-unlock.png";
@@ -187,6 +191,9 @@ function stopMachines() {
     setTimeout(function () {
         machine3.stop();
     }, 900);
+    setTimeout(function() {
+        console.log(start);
+    }, 1800);
 }
 
 $("#slot-machine-button").click(function () {
@@ -202,6 +209,7 @@ $("#slot-machine-button").click(function () {
 $(document).ready(function () {
     machine1 = $("#machine1").slotMachine({
         active: 4,
+        delay: 200,
         randomize: function (activeElementIndex) {
             return 6;
         }
@@ -209,7 +217,7 @@ $(document).ready(function () {
 
     machine2 = $("#machine2").slotMachine({
         active: 5,
-        delay: 500,
+        delay: 400,
         randomize: function (activeElementIndex) {
             return 6;
         }
@@ -217,7 +225,7 @@ $(document).ready(function () {
 
     machine3 = $("#machine3").slotMachine({
         active: 2,
-        delay: 500,
+        delay: 600,
         randomize: function (activeElementIndex) {
             return 6;
         }
