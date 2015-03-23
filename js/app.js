@@ -21,7 +21,7 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
     vm.isSnackLocked = false;
     vm.isDrinkLocked = false;
 
-    vm.domain = "http://localhost:8080/pag.com/api/tips/";
+    vm.domain = "http://10.1.3.121:8080/pag.com/api/tips/";
 
     $window.movie = vm.isMovieLocked;
     $window.snack = vm.isSnackLocked;
