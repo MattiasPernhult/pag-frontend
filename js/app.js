@@ -21,7 +21,7 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
     vm.isSnackLocked = false;
     vm.isDrinkLocked = false;
 
-    vm.domain = "http://192.168.0.16:8080/pag.com/api/tips/";
+    vm.domain = "http://localhost:8080/pag.com/api/tips/";
 
     $window.movie = vm.isMovieLocked;
     $window.snack = vm.isSnackLocked;
@@ -64,15 +64,15 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
     };
 
     vm.getMovieInfo = function () {
-        $http.get("http://192.168.0.16:8080/pag.com/api/movies/" + vm.movie.id + "/actors").success(function (data) {
+        $http.get("http://" + vm.movie.links[0].link).success(function (data) {
             vm.actors = data;
         }).error(function (data) {
-            alert("ERROR");
+
         });
     };
 
     vm.getSnackInfo = function () {
-        $http.get("http://192.168.0.16:8080/snacks.com/api/snacks/combine?id=" + vm.snack.id).success(function(data) {
+        $http.get("http://" + vm.snack.links[0].link).success(function(data) {
             vm.combineSnack = data;
         });
     };
@@ -97,18 +97,24 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
     };
 
     vm.getMovie = function () {
+        vm.start = false;
         $http.get(vm.domain + "movie").success(function (data) {
             console.log("Har skrivit");
             vm.movie = data.movie;
             stopMachines();
+            vm.start = true;
+            vm.getMovieInfo();
         });
     };
 
     vm.getSnack = function () {
+        vm.start = false;
         $http.get(vm.domain + "snack?movie_genre=" + vm.getGenre()).success(function (data) {
             console.log("Har skrivit");
             vm.snack = data.snack;
             stopMachines();
+            vm.start = true;
+            vm.getSnackInfo();
         });
     };
 
@@ -124,49 +130,65 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
     };
 
     vm.getDrink = function () {
+        vm.start = false;
         $http.get(vm.domain + "drink?movie_genre=" + vm.getGenre()).success(function (data) {
             console.log("Har skrivit");
             vm.drink = data.drink;
             stopMachines();
+            vm.start = true;
         });
     };
 
     vm.getMovieSnack = function () {
+        vm.start = false;
         $http.get(vm.domain + "movie/snack").success(function (data) {
             console.log("Har skrivit");
             vm.movie = data.movie;
             vm.snack = data.snack;
             stopMachines();
+            vm.start = true;
+            vm.getMovieInfo();
+            vm.getSnackInfo();
         });
     };
 
     vm.getMovieDrink = function () {
+        vm.start = false;
         $http.get(vm.domain + "movie/drink").success(function (data) {
             console.log("har skrivit");
             vm.movie = data.movie;
             vm.drink = data.drink;
             stopMachines();
+            vm.start = true;
+            vm.getMovieInfo();
         }).error(function (data) {
             alert("Error");
         });
     };
 
     vm.getSnackDrink = function () {
+        vm.start = false;
         $http.get(vm.domain + 'snack/drink?movie_genre=' + vm.getGenre()).success(function (data) {
             console.log("har skrivit");
             vm.snack = data.snack;
             vm.drink = data.drink;
             stopMachines();
+            vm.start = true;
+            vm.getSnackInfo();
         });
     };
 
     vm.getMovieSnackDrink = function () {
+        vm.start = false;
         $http.get(vm.domain + 'movie/snack/drink').success(function (data) {
             console.log("har skrivit");
             vm.movie = data.movie;
             vm.snack = data.snack;
             vm.drink = data.drink;
             stopMachines();
+            vm.start = true;
+            vm.getMovieInfo();
+            vm.getSnackInfo();
         }).error(function (data) {
             alert("Error");
         });
@@ -191,9 +213,6 @@ function stopMachines() {
     setTimeout(function () {
         machine3.stop();
     }, 900);
-    setTimeout(function() {
-        console.log(start);
-    }, 1800);
 }
 
 $("#slot-machine-button").click(function () {
