@@ -90,7 +90,7 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
 
     vm.chooseURL = function () {
         if ((vm.isMovieLocked) && (vm.isSnackLocked) && (vm.isDrinkLocked))
-            alert(vm.getGenre());
+            alert("You have a match.");
         else if ((!vm.isMovieLocked) && (vm.isSnackLocked) && (vm.isDrinkLocked))
             vm.getMovie();
         else if ((vm.isMovieLocked) && (!vm.isSnackLocked) && (vm.isDrinkLocked))
