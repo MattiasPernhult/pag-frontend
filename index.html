@@ -11,7 +11,8 @@
 <body id="body" ng-controller="TipsController as ctrl">
 
 
-    <div class="dropdown">
+    <div class="line">
+        <div class="dropdown">
         <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{ctrl.snackName}}
             <span class="caret"></span>
@@ -43,9 +44,6 @@
             <li ng-click="ctrl.changeDrinkKind(3, 'Soda')">Soda</li>
         </ul>
     </div>
-
-
-    <div class="line">
         <div class="content container" style="text-align: center">
             <h1>Tips</h1>
 
