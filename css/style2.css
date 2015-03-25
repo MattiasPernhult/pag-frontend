@@ -175,6 +175,20 @@
     clear: both;
 }
 
+.dropdownpos {
+    margin-left: 490px;
+}
+
+.dropdown {
+    width: 200px;
+    float: left;
+    margin-right: 120px;
+}
+
+.dropdown:last-child {
+    margin-right: 0px;
+}
+
 #textMachine,
 #textMachine2 {
     width: 520px;
