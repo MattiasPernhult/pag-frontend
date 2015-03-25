@@ -146,6 +146,30 @@ body {
     background-image: url("../img/snackslot6.png");
 }
 
+.dslot1 {
+    background-image: url("../img/drinkslot1.jpg");
+}
+
+.dslot2 {
+    background-image: url("../img/drinkslot2.jpg");
+}
+
+.dslot3 {
+    background-image: url("../img/drinkslot3.png");
+}
+
+.dslot4 {
+    background-image: url("../img/drinkslot4.png");
+}
+
+.dslot5 {
+    background-image: url("../img/drinkslot5.png");
+}
+
+.dslot6 {
+    background-image: url("../img/drinkslot6.png");
+}
+
 .slot7 img {
     width: auto;
     height : auto;
