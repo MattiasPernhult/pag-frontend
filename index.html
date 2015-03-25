@@ -18,17 +18,29 @@
         </button>
         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
             <li ng-click="ctrl.changeSnackKind(1, 'Chips')">Chips</li>
+            <li ng-click="ctrl.changeSnackKind(2, 'Candy')">Candy</li>
+            <li ng-click="ctrl.changeSnackKind(3, 'Chocolate')">Chocolate</li>
+            <li ng-click="ctrl.changeSnackKind(6, 'Nuts')">Nuts</li>
+            <li ng-click="ctrl.changeSnackKind(7, 'Nature chips')">Nature chips</li>
+            <li ng-click="ctrl.changeSnackKind(8, 'Ovenbaked chips')">Ovenbaked chips</li>
+            <li ng-click="ctrl.changeSnackKind(9, 'Cheese snacks')">Cheese snacks</li>
+            <li ng-click="ctrl.changeSnackKind(10, 'Corn chips')">Corn chips</li>
+            <li ng-click="ctrl.changeSnackKind(11, 'Cookies')">Cookies</li>
+            <li ng-click="ctrl.changeSnackKind(12, 'Cheese')">Cheese</li>
+            <li ng-click="ctrl.changeSnackKind(12, 'West-coast chips')">West-coast chips</li>
         </ul>
     </div>
 
 
     <div class="dropdown">
         <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown trigger
+            {{ctrl.drinkName}}
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-            ...
+            <li ng-click="ctrl.changeDrinkKind(1, 'Wine')">Wine</li>
+            <li ng-click="ctrl.changeDrinkKind(2, 'Beer')">Beer</li>
+            <li ng-click="ctrl.changeDrinkKind(3, 'Soda')">Soda</li>
         </ul>
     </div>
 
@@ -230,7 +242,7 @@
                             <p>{{ctrl.snack.description}}</p>
                         </div>
                         <div class="clearfix"></div>
-                        <h2>Combine with</h2>
+                        <h2 ng-show="ctrl.showCombine">Combine with</h2>
                         <div ng-repeat="item in ctrl.combineSnack.snacks">
                             <div class="row|($index % 4 == 0)">
                                 <div class="col-md-1" style="margin-right:75px">
