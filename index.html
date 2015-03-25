@@ -12,36 +12,37 @@
 
 
     <div class="line">
+
         <div class="dropdown">
-        <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
             {{ctrl.snackName}}
             <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-            <li ng-click="ctrl.changeSnackKind(1, 'Chips')">Chips</li>
-            <li ng-click="ctrl.changeSnackKind(2, 'Candy')">Candy</li>
-            <li ng-click="ctrl.changeSnackKind(3, 'Chocolate')">Chocolate</li>
-            <li ng-click="ctrl.changeSnackKind(6, 'Nuts')">Nuts</li>
-            <li ng-click="ctrl.changeSnackKind(7, 'Nature chips')">Nature chips</li>
-            <li ng-click="ctrl.changeSnackKind(8, 'Ovenbaked chips')">Ovenbaked chips</li>
-            <li ng-click="ctrl.changeSnackKind(9, 'Cheese snacks')">Cheese snacks</li>
-            <li ng-click="ctrl.changeSnackKind(10, 'Corn chips')">Corn chips</li>
-            <li ng-click="ctrl.changeSnackKind(11, 'Cookies')">Cookies</li>
-            <li ng-click="ctrl.changeSnackKind(12, 'Cheese')">Cheese</li>
-            <li ng-click="ctrl.changeSnackKind(12, 'West-coast chips')">West-coast chips</li>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation" ng-click="ctrl.changeSnackKind(1, 'Chips')"><a role="menuitem" tabindex="-1" href="#">Chips</a></li>
+                <li role="presentation" ng-click="ctrl.changeSnackKind(2, 'Candy')"><a role="menuitem" tabindex="-1" href="#">Candy</a></li>
+                <li role="presentation" ng-click="ctrl.changeSnackKind(3, 'Chocolate')"><a role="menuitem" tabindex="-1" href="#">Chocolate</a></li>
+                <li role="presentation" ng-click="ctrl.changeSnackKind(6, 'Nuts')"><a role="menuitem" tabindex="-1" href="#">Nuts</a></li>
+                <li role="presentation" ng-click="ctrl.changeSnackKind(7, 'Nature chips')"><a role="menuitem" tabindex="-1" href="#">Nature chips</a></li>
+                <li role="presentation" ng-click="ctrl.changeSnackKind(8, 'Ovenbaked chips')"><a role="menuitem" tabindex="-1" href="#">Ovenbaked chips</a></li>
+                <li role="presentation" ng-click="ctrl.changeSnackKind(9, 'Cheese snacks')"><a role="menuitem" tabindex="-1" href="#">Cheese snacks</a></li>
+                <li role="presentation" ng-click="ctrl.changeSnackKind(10, 'Corn chips')"><a role="menuitem" tabindex="-1" href="#">Corn Chips</a></li>
+                <li role="presentation" ng-click="ctrl.changeSnackKind(11, 'Cookies')"><a role="menuitem" tabindex="-1" href="#">Cookies</a></li>
+                <li role="presentation" ng-click="ctrl.changeSnackKind(12, 'Cheese')"><a role="menuitem" tabindex="-1" href="#">Cheese</a></li>
+                <li role="presentation" ng-click="ctrl.changeSnackKind(12, 'West-coast chips')"><a role="menuitem" tabindex="-1" href="#">West-coast chips</a></li>
         </ul>
     </div>
 
 
     <div class="dropdown">
-        <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">
             {{ctrl.drinkName}}
             <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-            <li ng-click="ctrl.changeDrinkKind(1, 'Wine')">Wine</li>
-            <li ng-click="ctrl.changeDrinkKind(2, 'Beer')">Beer</li>
-            <li ng-click="ctrl.changeDrinkKind(3, 'Soda')">Soda</li>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+            <li role="presentation" ng-click="ctrl.changeDrinkKind(1, 'Wine')"><a role="menuitem" tabindex="-1" href="#">Wine</a></li>
+            <li role="presentation" ng-click="ctrl.changeDrinkKind(2, 'Beer')"><a role="menuitem" tabindex="-1" href="#">Beer</a></li>
+            <li role="presentation" ng-click="ctrl.changeDrinkKind(3, 'Soda')"><a role="menuitem" tabindex="-1" href="#">Soda</a></li>
         </ul>
     </div>
         <div class="content container" style="text-align: center">
