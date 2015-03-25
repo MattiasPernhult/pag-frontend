@@ -11,6 +11,27 @@
 <body id="body" ng-controller="TipsController as ctrl">
 
 
+    <div class="dropdown">
+        <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ctrl.snackName}}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+            <li ng-click="ctrl.changeSnackKind(1, 'Chips')">Chips</li>
+        </ul>
+    </div>
+
+
+    <div class="dropdown">
+        <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown trigger
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+            ...
+        </ul>
+    </div>
+
 
     <div class="line">
         <div class="content container" style="text-align: center">
@@ -242,7 +263,6 @@
                         <h3>{{ctrl.drink.brand}}</h3>
                         <h4>{{ctrl.drink.kind}}</h4>
 
-                        <h3>{{ctrl.drink.rating}}/5</h3>
                         <h4>{{ctrl.drink.region}}</h4>
                         <h4>{{ctrl.drink.grape}}</h4>
                         <h4>{{ctrl.drink.winery}}</h4>

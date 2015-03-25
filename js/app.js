@@ -13,6 +13,9 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
 
     vm.start = false;
 
+    vm.snackName = "Snack Kind";
+    vm.snackId = 0;
+
     vm.movieLockImage = "img/glyphicons-205-unlock.png";
     vm.snackLockImage = "img/glyphicons-205-unlock.png";
     vm.drinkLockImage = "img/glyphicons-205-unlock.png";
@@ -21,7 +24,7 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
     vm.isSnackLocked = false;
     vm.isDrinkLocked = false;
 
-    vm.domain = "http://10.1.3.121:8080/pag.com/api/tips/";
+    vm.domain = "http://localhost:8080/pag.com/api/tips/";
 
     $window.movie = vm.isMovieLocked;
     $window.snack = vm.isSnackLocked;
@@ -109,7 +112,8 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
 
     vm.getSnack = function () {
         vm.start = false;
-        $http.get(vm.domain + "snack?movie_genre=" + vm.getGenre()).success(function (data) {
+        alert(vm.domain + "snack?movie_genre=" + vm.getGenre() + "&" + "kind=" + vm.snackId);
+        $http.get(vm.domain + "snack?movie_genre=" + vm.getGenre() + "&" + "kind=" + vm.snackId).success(function (data) {
             console.log("Har skrivit");
             vm.snack = data.snack;
             stopMachines();
@@ -141,7 +145,7 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
 
     vm.getMovieSnack = function () {
         vm.start = false;
-        $http.get(vm.domain + "movie/snack").success(function (data) {
+        $http.get(vm.domain + "movie/snack" + "?" + "kind=" + vm.snackId).success(function (data) {
             console.log("Har skrivit");
             vm.movie = data.movie;
             vm.snack = data.snack;
@@ -168,7 +172,7 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
 
     vm.getSnackDrink = function () {
         vm.start = false;
-        $http.get(vm.domain + 'snack/drink?movie_genre=' + vm.getGenre()).success(function (data) {
+        $http.get(vm.domain + 'snack/drink?movie_genre=' + vm.getGenre()  + "&" + "kind=" + vm.snackId).success(function (data) {
             console.log("har skrivit");
             vm.snack = data.snack;
             vm.drink = data.drink;
@@ -180,7 +184,7 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
 
     vm.getMovieSnackDrink = function () {
         vm.start = false;
-        $http.get(vm.domain + 'movie/snack/drink').success(function (data) {
+        $http.get(vm.domain + 'movie/snack/drink'  + "?" + "kind=" + vm.snackId).success(function (data) {
             console.log("har skrivit");
             vm.movie = data.movie;
             vm.snack = data.snack;
@@ -192,6 +196,11 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
         }).error(function (data) {
             alert("Error");
         });
+    };
+
+    vm.changeSnackKind = function(snackId, snackName) {
+        vm.snackName = snackName;
+        vm.snackId = snackId;
     };
 });
 
