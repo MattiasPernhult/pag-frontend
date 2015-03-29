@@ -314,3 +314,35 @@ $(document).ready(function () {
         }
     });
 });
+
+myApp.controller("DocController", function () {
+    var vm = this;
+
+    vm.snack = true;
+    vm.drink = true;
+    vm.snackDrink = true;
+
+    vm.changeSnack = function () {
+        if (vm.snack) {
+            vm.snack = false;
+        } else {
+            vm.snack = true;
+        }
+    };
+
+    vm.changeDrink = function () {
+        if (vm.drink) {
+            vm.drink = false;
+        } else {
+            vm.drink = true;
+        }
+    };
+
+    vm.changeSnackDrink = function () {
+        if (vm.snackDrink) {
+            vm.snackDrink = false;
+        } else {
+            vm.snackDrink = true;
+        }
+    };
+});
