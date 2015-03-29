@@ -9,13 +9,9 @@
 </head>
 
 <body id="body" ng-controller="TipsController as ctrl">
-
-
     <div class="line">
         <div class="content container" style="text-align: center">
-
             <div class="row">
-
                 <div class="col-md-3 machineContainer">
                     <div class="frame">
                         <div id="machine1" class="slotMachine">
@@ -28,34 +24,22 @@
                             <div class="slot slot7">
                                 <img ng-src="{{ctrl.movie.posterURL}}">
                             </div>
-                            <!-- slot 7 -->
-
                         </div>
-                        <!-- machine 1 -->
                         <div class="title" ng-show="ctrl.start">
-
-                        {{ctrl.movie.title}}
-
+                            {{ctrl.movie.title}}
                         </div>
-                        <!-- .title -->
                         <div class="lockinfo" ng-show="ctrl.start" id="movieLockInfo">
                             <div class="lock">
                                 <input type="image" ng-src="{{ctrl.movieLockImage}}" ng-click="ctrl.changeMovieLock()">
                             </div>
-                            <!-- end .lock -->
-
                             <div class="info">
                                 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#movieModal">
                                     More..
                                 </button>
                             </div>
-                            <!-- end .info -->
-
                         </div>
-                        <!-- end .lockinfo -->
-
                     </div>
-                    <!-- frame -->
+
                     <div class="frame">
                         <div id="machine2" class="slotMachine">
                             <div class="slot sslot1"></div>
@@ -67,33 +51,21 @@
                             <div class="slot slot7">
                                 <img ng-src="{{ctrl.snack.posterURL}}">
                             </div>
-                            <!-- slot7 -->
                         </div>
-                        <!-- Machine 2 -->
                         <div class="title" ng-show="ctrl.start">
-
-                                {{ctrl.snack.name}}
-
+                            {{ctrl.snack.name}}
                         </div>
-                        <!-- .title -->
                         <div class="lockinfo" ng-show="ctrl.start">
                             <div class="lock">
                                 <input type="image" ng-src="{{ctrl.snackLockImage}}" ng-click="ctrl.changeSnackLock()">
                             </div>
-                            <!-- end .lock -->
-
                             <div class="info">
                                 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#snackModal">
                                     More..
                                 </button>
                             </div>
-                            <!-- end .info -->
-
                         </div>
-                        <!-- end .lockinfo -->
-
                     </div>
-                    <!-- frame -->
 
                     <div class="frame">
                         <div id="machine3" class="slotMachine">
@@ -106,82 +78,83 @@
                             <div class="slot slot7">
                                 <img ng-src="{{ctrl.drink.posterURL}}">
                             </div>
-                            <!-- slot 7 -->
                         </div>
-                        <!-- Machine 3 -->
                         <div class="title" ng-show="ctrl.start">
-                                {{ctrl.drink.name}}
+                            {{ctrl.drink.name}}
                         </div>
-                        <!-- .title -->
                         <div class="lockinfo" ng-show="ctrl.start">
                             <div class="lock">
                                 <input type="image" ng-src="{{ctrl.drinkLockImage}}" ng-click="ctrl.changeDrinkLock()">
                             </div>
-                            <!-- end .lock -->
 
                             <div class="info">
                                 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#drinkModal">
                                     More..
                                 </button>
                             </div>
-                            <!-- end .info -->
-
                         </div>
-                        <!-- end .lockinfo -->
-
                     </div>
-                    <!-- frame -->
-
                 </div>
-                <!-- machine container -->
             </div>
 
             <div class="clearfix"></div>
 
             <div class="dropdownpos">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                        {{ctrl.snackName}}
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation" ng-click="ctrl.changeSnackKind(0, 'Snack Kind')"><a role="menuitem" tabindex="-1" href="#">Snack Kind</a>
+                        </li>
+                        <li role="presentation" ng-click="ctrl.changeSnackKind(1, 'Chips')"><a role="menuitem" tabindex="-1" href="#">Chips</a>
+                        </li>
+                        <li role="presentation" ng-click="ctrl.changeSnackKind(2, 'Candy')"><a role="menuitem" tabindex="-1" href="#">Candy</a>
+                        </li>
+                        <li role="presentation" ng-click="ctrl.changeSnackKind(3, 'Chocolate')"><a role="menuitem" tabindex="-1" href="#">Chocolate</a>
+                        </li>
+                        <li role="presentation" ng-click="ctrl.changeSnackKind(6, 'Nuts')"><a role="menuitem" tabindex="-1" href="#">Nuts</a>
+                        </li>
+                        <li role="presentation" ng-click="ctrl.changeSnackKind(7, 'Nature chips')"><a role="menuitem" tabindex="-1" href="#">Nature chips</a>
+                        </li>
+                        <li role="presentation" ng-click="ctrl.changeSnackKind(8, 'Ovenbaked chips')"><a role="menuitem" tabindex="-1" href="#">Ovenbaked chips</a>
+                        </li>
+                        <li role="presentation" ng-click="ctrl.changeSnackKind(9, 'Cheese snacks')"><a role="menuitem" tabindex="-1" href="#">Cheese snacks</a>
+                        </li>
+                        <li role="presentation" ng-click="ctrl.changeSnackKind(10, 'Corn chips')"><a role="menuitem" tabindex="-1" href="#">Corn Chips</a>
+                        </li>
+                        <li role="presentation" ng-click="ctrl.changeSnackKind(11, 'Cookies')"><a role="menuitem" tabindex="-1" href="#">Cookies</a>
+                        </li>
+                        <li role="presentation" ng-click="ctrl.changeSnackKind(12, 'Cheese')"><a role="menuitem" tabindex="-1" href="#">Cheese</a>
+                        </li>
+                        <li role="presentation" ng-click="ctrl.changeSnackKind(14, 'West-coast chips')"><a role="menuitem" tabindex="-1" href="#">West-coast chips</a>
+                        </li>
+                    </ul>
+                </div>
 
-            <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-            {{ctrl.snackName}}
-            <span class="caret"></span>
-        </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                <li role="presentation" ng-click="ctrl.changeSnackKind(0, 'Snack Kind')"><a role="menuitem" tabindex="-1" href="#">Snack Kind</a></li>
-                <li role="presentation" ng-click="ctrl.changeSnackKind(1, 'Chips')"><a role="menuitem" tabindex="-1" href="#">Chips</a></li>
-                <li role="presentation" ng-click="ctrl.changeSnackKind(2, 'Candy')"><a role="menuitem" tabindex="-1" href="#">Candy</a></li>
-                <li role="presentation" ng-click="ctrl.changeSnackKind(3, 'Chocolate')"><a role="menuitem" tabindex="-1" href="#">Chocolate</a></li>
-                <li role="presentation" ng-click="ctrl.changeSnackKind(6, 'Nuts')"><a role="menuitem" tabindex="-1" href="#">Nuts</a></li>
-                <li role="presentation" ng-click="ctrl.changeSnackKind(7, 'Nature chips')"><a role="menuitem" tabindex="-1" href="#">Nature chips</a></li>
-                <li role="presentation" ng-click="ctrl.changeSnackKind(8, 'Ovenbaked chips')"><a role="menuitem" tabindex="-1" href="#">Ovenbaked chips</a></li>
-                <li role="presentation" ng-click="ctrl.changeSnackKind(9, 'Cheese snacks')"><a role="menuitem" tabindex="-1" href="#">Cheese snacks</a></li>
-                <li role="presentation" ng-click="ctrl.changeSnackKind(10, 'Corn chips')"><a role="menuitem" tabindex="-1" href="#">Corn Chips</a></li>
-                <li role="presentation" ng-click="ctrl.changeSnackKind(11, 'Cookies')"><a role="menuitem" tabindex="-1" href="#">Cookies</a></li>
-                <li role="presentation" ng-click="ctrl.changeSnackKind(12, 'Cheese')"><a role="menuitem" tabindex="-1" href="#">Cheese</a></li>
-                <li role="presentation" ng-click="ctrl.changeSnackKind(14, 'West-coast chips')"><a role="menuitem" tabindex="-1" href="#">West-coast chips</a></li>
-        </ul>
-    </div>
-
-            <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">
-            {{ctrl.drinkName}}
-            <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
-            <li role="presentation" ng-click="ctrl.changeDrinkKind(0, 'Drink Kind')"><a role="menuitem" tabindex="-1" href="#">Drink Kind</a></li>
-            <li role="presentation" ng-click="ctrl.changeDrinkKind(1, 'Wine')"><a role="menuitem" tabindex="-1" href="#">Wine</a></li>
-            <li role="presentation" ng-click="ctrl.changeDrinkKind(2, 'Beer')"><a role="menuitem" tabindex="-1" href="#">Beer</a></li>
-            <li role="presentation" ng-click="ctrl.changeDrinkKind(3, 'Soda')"><a role="menuitem" tabindex="-1" href="#">Soda</a></li>
-        </ul>
-    </div>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">
+                        {{ctrl.drinkName}}
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+                        <li role="presentation" ng-click="ctrl.changeDrinkKind(0, 'Drink Kind')"><a role="menuitem" tabindex="-1" href="#">Drink Kind</a>
+                        </li>
+                        <li role="presentation" ng-click="ctrl.changeDrinkKind(1, 'Wine')"><a role="menuitem" tabindex="-1" href="#">Wine</a>
+                        </li>
+                        <li role="presentation" ng-click="ctrl.changeDrinkKind(2, 'Beer')"><a role="menuitem" tabindex="-1" href="#">Beer</a>
+                        </li>
+                        <li role="presentation" ng-click="ctrl.changeDrinkKind(3, 'Soda')"><a role="menuitem" tabindex="-1" href="#">Soda</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="clearfix"></div>
             <div class="col-md-2">
                 <div id="slot-machine-button" class="slotMachineButton" ng-click="ctrl.chooseURL()">Generate!</div>
             </div>
-
-            <!-- row -->
         </div>
-        <!-- content container -->
     </div>
 
     <div class="modal fade" id="movieModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -199,7 +172,7 @@
 
                         <div class="description">
                             <p>
-                            {{ctrl.movie.plot}}
+                                {{ctrl.movie.plot}}
                             </p>
                         </div>
 
@@ -278,6 +251,28 @@
                         <h4>{{ctrl.drink.region}}</h4>
                         <h4>{{ctrl.drink.grape}}</h4>
                         <h4>{{ctrl.drink.winery}}</h4>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="ctrl.stopPlay()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:100%">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="ctrl.stopPlay()"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Error</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container" style="width:100%">
+                        <h3>Error status: {{ctrl.errorStatus}}</h3>
+                        <h3>Error message</h3>
+                        <p>{{ctrl.errorMessage}}</p>
                     </div>
                 </div>
                 <div class="modal-footer">

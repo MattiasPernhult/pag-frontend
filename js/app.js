@@ -1,17 +1,12 @@
 var myApp = angular.module('myApp', []);
 
-var finished = false;
-
-myApp.factory('DataBasket', function () {
-    return {};
-});
-
-var app = this;
-
 myApp.controller('TipsController', function ($scope, $http, $window) {
     var vm = this;
 
     vm.start = false;
+
+    vm.errorMessage;
+    vm.errorStatus;
 
     vm.snackName = "Snack Kind";
     vm.snackId = 0;
@@ -71,23 +66,6 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
         }
     };
 
-    vm.getMovieInfo = function () {
-        $http.get("http://" + vm.movie.links[0].link).success(function (data) {
-            vm.actors = data;
-        }).error(function (data) {
-
-        });
-    };
-
-    vm.getSnackInfo = function () {
-        $http.get("http://" + vm.snack.links[0].link).success(function(data) {
-            vm.combineSnack = data;
-            if (data.message === "The given snack doesn't have any combined snacks.") {
-                vm.showCombine = false;
-            }
-        });
-    };
-
     vm.chooseURL = function () {
         if ((vm.isMovieLocked) && (vm.isSnackLocked) && (vm.isDrinkLocked))
             alert("You have a match.");
@@ -107,6 +85,42 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
             vm.getMovieSnackDrink();
     };
 
+    vm.getGenre = function () {
+        var returnStr = "";
+        var genres = vm.movie.genres;
+        for (var i = 0; i < genres.length; i++) {
+            returnStr += genres[i];
+            if (i < genres.length - 1)
+                returnStr += "+"
+                }
+        return returnStr;
+    };
+
+    vm.getMovieInfo = function () {
+        $http.get("http://" + vm.movie.links[0].link).success(function (data) {
+            vm.actors = data;
+        }).error(function (data, status) {
+            vm.errorMessage = data.message;
+            vm.errorStatus = status;
+            stopMachines();
+            openErrorModal();
+        });
+    };
+
+    vm.getSnackInfo = function () {
+        $http.get("http://" + vm.snack.links[0].link).success(function(data) {
+            vm.combineSnack = data;
+            if (data.message === "The given snack doesn't have any combined snacks.") {
+                vm.showCombine = false;
+            }
+        }).error(function (data, status) {
+            vm.errorMessage = data.message;
+            vm.errorStatus = status;
+            stopMachines();
+            openErrorModal();
+        });
+    };
+
     vm.getMovie = function () {
         vm.start = false;
         $http.get(vm.domain + "movie").success(function (data) {
@@ -115,6 +129,11 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
             stopMachines();
             vm.start = true;
             vm.getMovieInfo();
+        }).error(function (data, status) {
+            vm.errorMessage = data.message;
+            vm.errorStatus = status;
+            stopMachines();
+            openErrorModal();
         });
     };
 
@@ -127,18 +146,12 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
             stopMachines();
             vm.start = true;
             vm.getSnackInfo();
+        }).error(function (data, status) {
+            vm.errorMessage = data.message;
+            vm.errorStatus = status;
+            stopMachines();
+            openErrorModal();
         });
-    };
-
-    vm.getGenre = function () {
-        var returnStr = "";
-        var genres = vm.movie.genres;
-        for (var i = 0; i < genres.length; i++) {
-            returnStr += genres[i];
-            if (i < genres.length - 1)
-                returnStr += "+"
-        }
-        return returnStr;
     };
 
     vm.getDrink = function () {
@@ -148,6 +161,11 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
             vm.drink = data.drink;
             stopMachines();
             vm.start = true;
+        }).error(function(data, status) {
+            vm.errorMessage = data.message;
+            vm.errorStatus = status;
+            stopMachines();
+            openErrorModal();
         });
     };
 
@@ -162,6 +180,11 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
             vm.start = true;
             vm.getMovieInfo();
             vm.getSnackInfo();
+        }).error(function(data, status) {
+            vm.errorMessage = data.message;
+            vm.errorStatus = status;
+            stopMachines();
+            openErrorModal();
         });
     };
 
@@ -174,8 +197,11 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
             stopMachines();
             vm.start = true;
             vm.getMovieInfo();
-        }).error(function (data) {
-            alert("Error");
+        }).error(function (data, status) {
+            vm.errorMessage = data.message;
+            vm.errorStatus = status;
+            stopMachines();
+            openErrorModal();
         });
     };
 
@@ -189,6 +215,11 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
             stopMachines();
             vm.start = true;
             vm.getSnackInfo();
+        }).error(function(data, status) {
+            vm.errorMessage = data.message;
+            vm.errorStatus = status;
+            stopMachines();
+            openErrorModal();
         });
     };
 
@@ -204,8 +235,11 @@ myApp.controller('TipsController', function ($scope, $http, $window) {
             vm.start = true;
             vm.getMovieInfo();
             vm.getSnackInfo();
-        }).error(function (data) {
-            alert("Error");
+        }).error(function (data, status) {
+            vm.errorMessage = data.message;
+            vm.errorStatus = status;
+            stopMachines();
+            openErrorModal();
         });
     };
 
@@ -228,6 +262,10 @@ var machine3;
 var movie;
 var snack;
 var drink;
+
+function openErrorModal() {
+    $('#errorModal').modal('show');
+}
 
 function stopMachines() {
     setTimeout(function () {
