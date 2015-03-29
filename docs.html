@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html ng-app="docs">
+
+<head>
+    <title>PAG documentation</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller="DocController as ctrl">
+    <div class=container>
+        <h1 id="title">PAG Mashup Documentation</h1>
+
+        <div class="well">
+            <h2>General</h2>
+            <p>This documentation describes how to use the PAG API which is a mashup project. The mashup combine data from different RESTful API sources and these are The Movie Database, Snooth, Brewery DB and Snacks (our own RESTful API which is not available for public use).</p>
+            <h3>Response format</h3>
+            <p>All the response are formated in JSON</p>
+        </div>
+
+        <div id="movie" class="well">
+            <h2>/movie</h2>
+            <h3>Example</h3>
+            <p>api/tips/movie</p>
+            <h3>Result</h3>
+            <p>{ "movie": { "genres": [ "Action", "Drama", "Fantasy", "Horror", "War" ], "id": 49017, "title": "Dracula Untold", "plot": "Vlad Tepes is a great hero, but when he learns the Sultan is preparing for battle and needs to form an army of 1,000 boys, including Vlad's son, he vows to find a way to protect his family. Vlad turns to dark forces in order to get the power to destroy his enemies and agrees to go from hero to monster as he's turned into the mythological vampire Dracula.", "rating": 6.4, "posterURL": "http://image.tmdb.org/t/p/w500//4oy4e0DP6LRwRszfx8NY8EYBj8V.jpg" } }
+            </p>
+        </div>
+
+        <div id="moviesnack" class="well">
+            <h2>/movie/snack</h2>
+            <h3>Optional Parameters</h3>
+            <p><strong>kind</strong> = An integer value representing which snack to generate.</p>
+            <h3>Example</h3>
+            <p>api/tips/movie/snack</p>
+            <h3>Result</h3>
+            <p>{ "movie": { "genres": [ "Action", "Adventure", "Fantasy" ], "id": 49051, "title": "The Hobbit: An Unexpected Journey", "plot": "Bilbo Baggins, a hobbit enjoying his quiet life, is swept into an epic quest by Gandalf the Grey and thirteen dwarves who seek to reclaim their mountain home from Smaug, the dragon.", "rating": 6.8, "posterURL": "http://image.tmdb.org/t/p/w500//h1XjBJoWdOh8aegBoVYKgABQZSL.jpg" }, "snack": { "id": 160, "name": "Hot Sweet Chili", "description": "Fine ridged potato chips flavored with hot sweet chilli. The warm mixture of sweet and strongly embraces the tongue.", "kind": "Chips", "brand": "Estrella", "posterURL": "http://mahsql.sytes.net/images/snacks/Sweetchili.png" } }
+
+            </p>
+        </div>
+
+        <div id="moviedrink" class="well">
+            <h2>/movie/drink</h2>
+            <h3>Optional Parameters</h3>
+            <p><strong>drink</strong> = An integer value representing which drink to generate.</p>
+            <h3>Example</h3>
+            <p>api/tips/movie/drink</p>
+            <h3>Result</h3>
+            <p>{ "movie": { "genres": [ "Action", "Adventure", "Science Fiction" ], "id": 91314, "title": "Transformers: Age of Extinction", "plot": "As humanity picks up the pieces, following the conclusion of \"Transformers: Dark of the Moon,\" Autobots and Decepticons have all but vanished from the face of the planet. However, a group of powerful, ingenious businessman and scientists attempt to learn from past Transformer incursions and push the boundaries of technology beyond what they can control - all while an ancient, powerful Transformer menace sets Earth in his cross-hairs.", "rating": 6.2, "posterURL": "http://image.tmdb.org/t/p/w500//ykIZB9dYBIKV13k5igGFncT5th6.jpg" }, "drink": { "name": "The Dude's Rug", "description": "Hard cider with tea and Chai spices.\r\n\r\nApple cider, chai tea (tea with cardamom, clove, cinnamon, ginger and vanilla).", "posterURL": "https://s3.amazonaws.com/brewerydbapi/beer/5HjGau/upload_ygd5lx-medium.png" } }
+            </p>
+        </div>
+
+        <div id="moviesnackdrink" class="well">
+            <h2>/movie/snack/drink</h2>
+            <h3>Optional Parameters</h3>
+            <p><strong>kind</strong> = An integer value representing which snack to generate.</p>
+            <p><strong>drink</strong> = An integer value representing which drink to generate.</p>
+            <h3>Example</h3>
+            <p>api/tips/movie/snack/drink</p>
+            <h3>Result</h3>
+            <p>{ "movie": { "genres": [ "Action", "Science Fiction" ], "id": 157350, "title": "Divergent", "plot": "DIVERGENT is a thrilling action-adventure film set in a world where people are divided into distinct factions based on human virtues. Tris Prior is warned she is Divergent and will never fit into any one group. When she discovers a conspiracy by a faction leader to destroy all Divergents, Tris must learn to trust in the mysterious Four and together they must find out what makes being Divergent so dangerous before it's too late. Based on the best-selling book series by Veronica Roth.", "rating": 6.9, "posterURL": "http://image.tmdb.org/t/p/w500//yTtx2ciqk4XdN1oKhMMDy3f5ue3.jpg" }, "snack": { "id": 71, "name": "Flamin' hot Cheez cruncherz", "description": "It has the same good and outstanding taste as the original cheez cruncherz but here we topped off with a little chilli.", "kind": "Ostsnacks", "brand": "OLW", "posterURL": "http://mahsql.sytes.net/images/snacks/flaming_hot_cheez_cruncherz.png" }, "drink": { "name": "Baltic Porter", "description": "Capital Square Series - These brews are/were part of our Very Limited Released Capital Square Series in 4-packs. Current Capital Square Series selection - Weizen Doppelbock.", "posterURL": "https://s3.amazonaws.com/brewerydbapi/beer/tG36G8/upload_wUMhqx-medium.png" } }
+            </p>
+        </div>
+
+        <div id="snack" class="well">
+            <h2>/snack</h2>
+            <h3>Required parameters</h3>
+            <p><strong>movie_genre</strong> = A string containing one or more genres seperated by a “+” character. Notice that the genre must start with a capital letter.</p>
+            <h3>Optional Parameters</h3>
+            <p><strong>kind</strong> = An integer value representing which snack to generate.</p>
+            <h3>Example</h3>
+            <form>
+                <input type="radio" name="snack" checked ng-click="ctrl.changeSnack()"> api/tips/snack?movie_genre=Adventure
+                <br>
+                <input type="radio" name="snack" ng-click="ctrl.changeSnack()"> api/tips/snack?movie_genre=Animation+Thriller
+            </form>
+            <h3>Result</h3>
+            <p ng-show="ctrl.snack">{ "snack": { "id": 17, "name": "Grill & Vitlök", "description": "Ridged potato chips with onion and garlic flavor.", "kind": "Chips", "brand": "Estrella", "posterURL": "http://mahsql.sytes.net/images/snacks/estrella_grill_vitlok.png" } }
+            </p>
+            <p ng-show="!ctrl.snack">{ "snack": { "id": 48, "name": "Lättsaltade Naturchips", "description": "These Swedish Natural Chips are extra crispy chips that are only flavored with a pinch of salt. More than that is not needed to make really good chips!", "kind": "Naturchips", "brand": "OLW", "posterURL": "http://mahsql.sytes.net/images/snacks/Naturchips_Lattsaltade.png" } }
+            </p>
+        </div>
+
+        <div id="drink" class="well">
+            <h2>/drink</h2>
+            <h3>Required parameters</h3>
+            <p><strong>movie_genre</strong> = A string containing one or more genres seperated by a “+” character. Notice that the genre must start with a capital letter.</p>
+            <h3>Optional Parameters</h3>
+            <p><strong>drink</strong> = An integer value representing which drink to generate.</p>
+            <h3>Example</h3>
+            <form>
+                <input type="radio" name="drink" checked ng-click="ctrl.changeDrink()"> api/tips/drink?movie_genre=Romance
+                <br>
+                <input type="radio" name="drink" ng-click="ctrl.changeDrink()"> api/tips/drink?movie_genre=Animation+Action
+            </form>
+            <h3>Result</h3>
+            <p ng-show="ctrl.drink">{ "drink": { "name": "Southern Right Sauvignon Blanc Walker Bay", "posterURL": "http://ei.isnooth.com/multimedia/0/f/1/image_811646_square.jpeg", "grape": "Sauvignon Blanc", "winery": "Southern Right", "region": "Walker Bay, Bot River , South Africa", "rating": 4 } }
+            </p>
+            <p ng-show="!ctrl.drink">{ "drink": { "id": 194, "name": "Fanta Lemon", "description": "sdfs", "kind": "Läsk", "brand": "Coca-Cola", "posterURL": "http://mahsql.sytes.net/images/snacks/fanta-lemon.png" } }
+            </p>
+        </div>
+
+        <div id="snackdrink" class="well">
+            <h2>/snack/drink</h2>
+            <h3>Required parameters</h3>
+            <p><strong>movie_genre</strong> = A string containing one or more genres seperated by a “+” character. Notice that the genre must start with a capital letter.</p>
+            <h3>Optional Parameters</h3>
+            <p><strong>kind</strong> = An integer value representing which snack to generate.</p>
+            <p><strong>drink</strong> = An integer value representing which drink to generate.</p>
+            <h3>Example</h3>
+            <form>
+                <input type="radio" name="snackdrink" checked ng-click="ctrl.changeSnackDrink()"> api/tips/snack/drink?movie_genre=Animation
+                <br>
+                <input type="radio" name="snackdrink" ng-click="ctrl.changeSnackDrink()"> api/tips/snack/drink?movie_genre=Comedy+Western
+            </form>
+            <h3>Result</h3>
+            <p ng-show="ctrl.snackDrink">{ "snack": { "id": 133, "name": "Nappar Fruit", "description": "The small favorites with fruit flavor.", "kind": "Godis", "brand": "Haribo", "posterURL": "http://mahsql.sytes.net/images/snacks/napparfruit.jpg" }, "drink": { "id": 184, "name": "Coca-Cola Life", "description": "sdfs", "kind": "Läsk", "brand": "Coca-Cola", "posterURL": "http://mahsql.sytes.net/images/snacks/cola-life.jpg" } }
+            </p>
+            <p ng-show="!ctrl.snackDrink">{ "snack": { "id": 91, "name": "Crunchos Sourcream Ranch", "description": "Sourcream Ranch consists of tastes sour cream, onion, tomato and cheese and is commonly found in the areas around the American South.", "kind": "Majschips", "brand": "OLW", "posterURL": "http://mahsql.sytes.net/images/snacks/crunchos_sourcream.png" }, "drink": { "name": "Imperial Barley Wine Ale", "description": "This Imperial Barley Wine Style Ale has a rich amber color with a full, robust body. This Barley Wine Style Ale has a traditional warming malt flavor with a delightful hop finish, While exceptionally drinkable now, it will continue to improve with age - taking on subtle flavors of dark fruit, sherry and anise. Hop flavors and aromas will become more rounded and luscious caramel malt notes will become more intense. Brewed with an astonishing original gravity of 24 Plato and finishing at 11.0% alcohol by volume, this Imperial Barley Wine Ale is not for the faint of heart, though it will reward the adventurous drinker with an unparalleled taste experience.", "posterURL": "https://s3.amazonaws.com/brewerydbapi/beer/8mpVtg/upload_tdwzHS-medium.png" } }
+            </p>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
