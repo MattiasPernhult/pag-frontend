@@ -21,6 +21,7 @@
 
         <div id="movie" class="well">
             <h2>/movie</h2>
+            <p>This endpoint will return a random movie.</p>
             <h3>Example</h3>
             <p>api/tips/movie</p>
             <h3>Result</h3>
@@ -30,6 +31,7 @@
 
         <div id="moviesnack" class="well">
             <h2>/movie/snack</h2>
+            <p>This endpoint will return a random movie and also a snack based on the movie genre.</p>
             <h3>Optional Parameters</h3>
             <p><strong>kind</strong> = An integer value representing which snack to generate.</p>
             <h3>Example</h3>
@@ -42,6 +44,7 @@
 
         <div id="moviedrink" class="well">
             <h2>/movie/drink</h2>
+            <p>This endpoint will return a random movie and also a drink based on the movie genre.</p>
             <h3>Optional Parameters</h3>
             <p><strong>drink</strong> = An integer value representing which drink to generate.</p>
             <h3>Example</h3>
@@ -53,6 +56,7 @@
 
         <div id="moviesnackdrink" class="well">
             <h2>/movie/snack/drink</h2>
+            <p>This endpoint will return a random movie and also a snack and a drink based on the movie genre.</p>
             <h3>Optional Parameters</h3>
             <p><strong>kind</strong> = An integer value representing which snack to generate.</p>
             <p><strong>drink</strong> = An integer value representing which drink to generate.</p>
@@ -66,6 +70,7 @@
         <div id="snack" class="well">
             <h2>/snack</h2>
             <h3>Required parameters</h3>
+            <p>This endpoint will return a snack based on the movie genre which is passed through the required parameter.</p>
             <p><strong>movie_genre</strong> = A string containing one or more genres seperated by a “+” character. Notice that the genre must start with a capital letter.</p>
             <h3>Optional Parameters</h3>
             <p><strong>kind</strong> = An integer value representing which snack to generate.</p>
@@ -84,6 +89,7 @@
 
         <div id="drink" class="well">
             <h2>/drink</h2>
+            <p>This endpoint will return a drink based on the movie genre which is passed through the required parameter.</p>
             <h3>Required parameters</h3>
             <p><strong>movie_genre</strong> = A string containing one or more genres seperated by a “+” character. Notice that the genre must start with a capital letter.</p>
             <h3>Optional Parameters</h3>
@@ -103,6 +109,7 @@
 
         <div id="snackdrink" class="well">
             <h2>/snack/drink</h2>
+            <p>This endpoint will return a snack and also a drink based on the movie genre which is passed through the required parameter.</p>
             <h3>Required parameters</h3>
             <p><strong>movie_genre</strong> = A string containing one or more genres seperated by a “+” character. Notice that the genre must start with a capital letter.</p>
             <h3>Optional Parameters</h3>
@@ -119,6 +126,15 @@
             </p>
             <p ng-show="!ctrl.snackDrink">{ "snack": { "id": 91, "name": "Crunchos Sourcream Ranch", "description": "Sourcream Ranch consists of tastes sour cream, onion, tomato and cheese and is commonly found in the areas around the American South.", "kind": "Majschips", "brand": "OLW", "posterURL": "http://mahsql.sytes.net/images/snacks/crunchos_sourcream.png" }, "drink": { "name": "Imperial Barley Wine Ale", "description": "This Imperial Barley Wine Style Ale has a rich amber color with a full, robust body. This Barley Wine Style Ale has a traditional warming malt flavor with a delightful hop finish, While exceptionally drinkable now, it will continue to improve with age - taking on subtle flavors of dark fruit, sherry and anise. Hop flavors and aromas will become more rounded and luscious caramel malt notes will become more intense. Brewed with an astonishing original gravity of 24 Plato and finishing at 11.0% alcohol by volume, this Imperial Barley Wine Ale is not for the faint of heart, though it will reward the adventurous drinker with an unparalleled taste experience.", "posterURL": "https://s3.amazonaws.com/brewerydbapi/beer/8mpVtg/upload_tdwzHS-medium.png" } }
             </p>
+        </div>
+
+        <div class="well">
+            <h2>/snack/kinds</h2>
+            <p>This endpoint will return a list of the available snacks. The id for the snack can be passed as an optional parameter.</p>
+            <h3>Example</h3>
+            <p>/api/tips/snack/kinds</p>
+            <h3>Result</h3>
+            <p>{"kinds":[{"id":1,"kindName":"Chips"},{"id":2,"kindName":"Godis"},{"id":3,"kindName":"Choklad"},{"id":4,"kindName":"Glass"},{"id":5,"kindName":"Dip"},{"id":6,"kindName":"Nötter"},{"id":7,"kindName":"Naturchips"},{"id":8,"kindName":"Ugnsbakade chips"},{"id":9,"kindName":"Ostsnacks"},{"id":10,"kindName":"Majschips"},{"id":11,"kindName":"Kakor"},{"id":12,"kindName":"Ost"},{"id":13,"kindName":"Kex"},{"id":14,"kindName":"Västkustschips"},{"id":15,"kindName":"Snacksringar"},{"id":16,"kindName":"Snacksskruvar"},{"id":17,"kindName":"Läsk"}]}</p>
         </div>
     </div>
 
